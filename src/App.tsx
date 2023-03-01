@@ -131,10 +131,11 @@ function App() {
   return (
     <div className="App">
       <Header title={'The title of my header'} />
-      <div className='App-body'>
+      <button onClick={() => {console.log ("clicked")}}>button text</button>
+      {/* <div className='App-body'>
       <Tasks title = {data1.title} tasks = {data1.tasks} students = {data1.students}/>
       <Tasks title = {data2.title} tasks = {data2.tasks} students = {data2.students}/>
-      </div>
+      </div> */}
       <Footer titleForFooter={'Footer title'} />
       
     </div>
