@@ -4,7 +4,7 @@ type BodyTitleType = {
 export const Body = (props: BodyTitleType) => {
     return (
         <div>
-            {props.titleForBody}
+            Where is it???{props.titleForBody}
         </div>
     )
 }
