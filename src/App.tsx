@@ -5,6 +5,7 @@ import { Header } from './site/header';
 import { Body } from './site/body';
 import { Footer } from './site/footer';
 import { NewComponent } from './NewComponent';
+import { Tasks } from './Tasks';
 
 function App() {
   const topCars = [
@@ -71,7 +72,7 @@ function App() {
     title: "What to learn",
     tasks: [
       { taskId: 1, title: "HTML&CSS", isDone: true },
-      { taskId: 2, title: "JS", isDone: true }
+      { taskId: 2, title: "JS", isDone: false }
     ],
     students: [
       'Rick Kane',
@@ -130,9 +131,12 @@ function App() {
   return (
     <div className="App">
       <Header title={'The title of my header'} />
-      <Body titleForBody={'Body title'} />
+      <div className='App-body'>
+      <Tasks title = {data1.title} tasks = {data1.tasks} students = {data1.students}/>
+      <Tasks title = {data2.title} tasks = {data2.tasks} students = {data2.students}/>
+      </div>
       <Footer titleForFooter={'Footer title'} />
-      <NewComponent students={data1.students} cars={topCars} />
+      
     </div>
   );
 }

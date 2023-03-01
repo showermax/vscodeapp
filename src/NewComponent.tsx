@@ -1,4 +1,5 @@
 import React from 'react';
+
 type NewComponentType = {
     students: Array<string>
     cars:Array<spType>

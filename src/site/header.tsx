@@ -3,7 +3,7 @@ type HeaderType={
 }
 export const Header = (props: HeaderType) => {
     return (
-    <div>
+    <div className="App-header">
         {props.title}
     </div>
     )
