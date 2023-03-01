@@ -127,11 +127,21 @@ function App() {
       'Micheal Talbot95',
     ]
   }
-
+const foo1=() => {
+  console.log("foo1")
+}
+const foo2=(n: number) => {
+  console.log(n)
+}
+const subscriber = (n:string) =>{
+  console.log(n)
+ }
   return (
     <div className="App">
       <Header title={'The title of my header'} />
-      <button onClick={() => {console.log ("clicked")}}>button text</button>
+      <button onClick={foo1}>Foo1 button</button>
+      <button onClick={(even)=> foo2(100200)}>Foo2 button</button>
+      <button onClick={(event)=> subscriber("Vasya")}>Foo2 button</button>
       {/* <div className='App-body'>
       <Tasks title = {data1.title} tasks = {data1.tasks} students = {data1.students}/>
       <Tasks title = {data2.title} tasks = {data2.tasks} students = {data2.students}/>
@@ -143,3 +153,14 @@ function App() {
 }
 
 export default App;
+
+
+  // const subscriber = (n:string) =>{
+  //   (n=="Ivan") ? console.log("Ivan") : console.log("Vasya")
+  // }
+  // const subscriber2 = () =>{
+  //   console.log ("Ivan")
+  // }
+
+  // <button onClick={subscriber("Ivan")}>button text</button>
+  // <button onClick={subscriber("Vasya")}>button text</button>
