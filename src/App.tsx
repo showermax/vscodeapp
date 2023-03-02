@@ -6,20 +6,24 @@ import { Button } from './components/Button';
 
 
 function App() {
-const Foo1 = (subscriber: string, age: number)=>{
-console.log(subscriber, age);
-}
-const Foo2 = (subscriber:string)=>{
-  console.log(subscriber);
-}
+  const Foo1 = (subscriber: string, age: number) => {
+    console.log(subscriber, age);
+  }
+  const Foo2 = (subscriber: string) => {
+    console.log(subscriber);
+  }
+  const Foo3 = () => {
+    console.log("I'm stupid button");
+  }
   return (
-  <div className="App">
-    <button> Youtube Channel 1</button>
-    <button> Youtube Channel 2</button>
-    <Button name={"Youtube Channel 1"} callback={()=>Foo1("I'm Vasya", 21)}/>
-    <Button name={"Youtube Channel 1"} callback={()=>Foo2("I'm Ivan")}/>
-  </div>
-)
+    <div className="App">
+      <button> Youtube Channel 1</button>
+      <button> Youtube Channel 2</button>
+      <Button name={"Youtube Channel 1"} callback={() => Foo1("I'm Vasya", 21)} />
+      <Button name={"Youtube Channel 2"} callback={() => Foo2("I'm Ivan")} />
+      <Button name={"Youtube Channel 1"} callback={Foo3} />
+    </div>
+  )
 }
 
 export default App;
