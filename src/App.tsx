@@ -1,30 +1,41 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Header } from './site/header';
 import { Button } from './components/Button';
+import { FilterComponent } from './components/FilterComponent';
 
+type FilterType="all"| "RUBLS" | "Dollars"
 
 function App() {
-let [a, setA]=useState(1)
-const onClickHandler = ()=>{
-  setA(++a)
-  console.log(a);
-  
-}
-const onClickHandler0 = ()=>{
-  setA(a=0)
-  console.log(a);
-  
-}
+
+  const [money, setMoney] = useState([
+    { banknots: 'Dollars', value: 100, number: ' a1234567890' },
+    { banknots: 'Dollars', value: 50, number: ' z1234567890' },
+    { banknots: 'RUBLS', value: 100, number: ' w1234567890' },
+    { banknots: 'Dollars', value: 100, number: ' e1234567890' },
+    { banknots: 'Dollars', value: 50, number: ' c1234567890' },
+    { banknots: 'RUBLS', value: 100, number: ' r1234567890' },
+    { banknots: 'Dollars', value: 50, number: ' x1234567890' },
+    { banknots: 'RUBLS', value: 50, number: ' v1234567890' },
+  ])
+  let currentMoney = money
+
+  const [v, setV] = useState<FilterType>('all')
+
+  const onClickFilterHandler=(buttonName: FilterType)=>{
+    setV(buttonName);
+  }
+
+currentMoney= (v=="all") ? money : money.filter(el=>el.banknots == v)
+
   return (
     <div className="App">
-      <h1>{a}</h1>
-      <button onClick={onClickHandler}>number</button>
-      <button onClick={onClickHandler0}>0</button>
+      <Header title={"Filter method"} />
+      <FilterComponent defaultarr={money}/>
     </div>
   )
-  
+
 }
 
 export default App;
